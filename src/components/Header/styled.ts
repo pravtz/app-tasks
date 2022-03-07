@@ -5,37 +5,7 @@ type subtitleProps = {
   isVisible: boolean
 }
 
-export const Wrapper = styled.div`
-  //this is test for breackpoint
-  ${media.greaterThan('small')`
-    /* screen width is greater than 768px (medium) */
-    h1:after{
-      content: ' - small';
-      font-size: 14px;
-    }
-  `}
-  ${media.greaterThan('medium')`
-    /* screen width is greater than 768px (medium) */
-    h1:after{
-      content: ' - medium';
-      font-size: 14px;
-    }
-  `}
-  ${media.greaterThan('large')`
-    /* screen width is greater than 1170px (large) */
-    h1:after{
-      content: ' - large';
-      font-size: 14px;
-    }
-  `}
-  ${media.greaterThan('huge')`
-    /* screen width is greater than 1440px (huge) */
-    h1:after{
-      content: ' - huge';
-      font-size: 14px;
-    }
-  `}
-`
+export const Wrapper = styled.div``
 export const Title = styled.h1`
   font-size: ${(props) => props.theme.fontSizes.fontSizes4};
   color: ${(props) => props.theme.colors.textPrimary};
