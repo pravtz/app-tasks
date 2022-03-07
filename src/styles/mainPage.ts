@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 import * as SeparatorPrimitive from '@radix-ui/react-separator'
 import media from 'styled-media-query'
+import Toggle from '../components/Icons/IconToggle'
 
 export const GroupAction = styled.div`
   display: flex;
@@ -26,4 +27,7 @@ export const WrapperButton = styled.div`
     margin: 10px 0;
 
   `}
+`
+export const ToggleFilter = styled(Toggle)`
+  font-size: ${(props) => props.theme.fontSizes.fontSizes2};
 `
