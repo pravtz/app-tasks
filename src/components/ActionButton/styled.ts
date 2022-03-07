@@ -18,3 +18,6 @@ export const ActionButtonMain = styled.button`
 
   `}
 `
+export const LabelSpan = styled.span`
+  text-align: left;
+`

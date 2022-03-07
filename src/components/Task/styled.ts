@@ -11,11 +11,16 @@ export const Content = styled.div`
   justify-content: space-between;
   div {
     display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
     align-items: center;
+    text-align: left;
   }
 `
 export const Check = styled.div`
   margin-right: 10px;
 `
-export const NameTask = styled.div``
+export const NameTask = styled.div`
+  text-align: left;
+`
 export const ButtonsToActions = styled.div``

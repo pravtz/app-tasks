@@ -7,30 +7,26 @@ import {
   WapperCorner
 } from './styled'
 
+import { useAppDispatch, useAppSelector } from '../../redux/rooks'
+
 const ListTasksArea = () => {
+  const taskList = useAppSelector((state) => state.task.value)
+
   return (
     <WrapperScrollArea>
       <WrapperViewport>
         {/* this is list start */}
-        <Task />
-        <Task />
-        <Task />
-        <Task />
-        <Task />
-        <Task />
-        <Task />
-        <Task />
-        <Task />
-        <Task />
-        <Task />
-        <Task />
-        <Task />
-        <Task />
-        <Task />
-        <Task />
-        <Task />
-        <Task />
-        <Task />
+        {taskList.map((taskData) => {
+          return (
+            <Task
+              key={taskData.id}
+              id={taskData.id}
+              isPending={taskData.isPending}
+              titleTask={taskData.titleTask}
+            />
+          )
+        })}
+
         {/* this is list end */}
       </WrapperViewport>
       <WapperScrollbar orientation="vertical">

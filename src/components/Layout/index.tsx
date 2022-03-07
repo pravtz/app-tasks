@@ -9,7 +9,8 @@ import {
 } from './styled'
 import checkDouble from '../../../public/static/check-double-solid.svg'
 import AsideBar from '../AsideBar'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
+import { useAppSelector } from '../../redux/rooks'
 
 type LayoutProps = {
   children: React.ReactNode
@@ -17,6 +18,16 @@ type LayoutProps = {
 
 const Layout = ({ children }: LayoutProps) => {
   const [asideIsVisible, setAsideIsVisible] = useState(false)
+
+  const isVisible = useAppSelector(
+    (state) => state.aside.valueAside.asideIsVisible
+  )
+
+  const handlerIsVisible = () => setAsideIsVisible(isVisible)
+
+  useEffect(() => {
+    handlerIsVisible()
+  }, [isVisible])
 
   return (
     <Wrapper>

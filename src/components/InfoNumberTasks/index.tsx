@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 import {
   Wrapper,
   Content,
@@ -7,6 +7,7 @@ import {
   IconCompleted
 } from './styled'
 import { FiCheckSquare, FiSquare } from 'react-icons/fi'
+import { useAppSelector } from '../../redux/rooks'
 
 const InfoNumberTasks = () => {
   const [pendingTasks, setPendingTasks] = useState(0)
@@ -14,6 +15,22 @@ const InfoNumberTasks = () => {
 
   const pluralizaçãoPendingTasks = pendingTasks > 1 ? 's' : ''
   const pluralizaçãocompletedTasks = completedTasks > 1 ? 's' : ''
+
+  const countPendingTasks = () => {
+    const tasks = useAppSelector((state) => state.task.value)
+    const tasksPending = tasks.filter((task) => {
+      return task.isPending === true
+    })
+    return tasksPending.length
+  }
+
+  const countCompletedTasks = () => {
+    const tasks = useAppSelector((state) => state.task.value)
+    const tasksCompleted = tasks.filter((task) => {
+      return task.isPending === false
+    })
+    return tasksCompleted.length
+  }
 
   return (
     <Wrapper>

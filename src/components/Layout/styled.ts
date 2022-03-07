@@ -53,9 +53,9 @@ export const ContentWrapper = styled.div`
 `
 export const AsideRight = styled.div<AsideRightProps>`
   opacity: 0.93;
-  width: 50vw;
+  width: 80vw;
   height: 100vh;
-  right: ${(props) => (props.isVisible ? '0' : '-50%')};
+  right: ${(props) => (props.isVisible ? '0' : '-80%')};
   background: linear-gradient(
     90deg,
     ${(props) => props.theme.colors.colorBackgroundUp} 0%,
@@ -63,5 +63,6 @@ export const AsideRight = styled.div<AsideRightProps>`
   );
   position: absolute;
   z-index: 20;
+  transition: right 160ms ease-in-out; ;
 `
 export const AsideWrapper = styled.div``
