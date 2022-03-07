@@ -10,13 +10,22 @@ import {
 } from '../styles/mainPage'
 import Button from '../components/Button'
 import ListTasksArea from '../components/ListTasksArea'
+import { useAppDispatch } from '../redux/rooks'
+import { updateVisible, updateScreenEdition } from '../redux/assideSlice'
 
 const Home: NextPage = () => {
+  const dispatch = useAppDispatch()
+
+  const handlerOpenAsideToAddTask = () => {
+    dispatch(updateVisible(true))
+    dispatch(updateScreenEdition(true))
+  }
+
   return (
     <Layout>
       <Header subtitle={'Crie suas tarefas de forma simples e fácil!'} />
       <WrapperButton>
-        <Button>Add tarefa</Button>
+        <Button onClick={handlerOpenAsideToAddTask}>Add tarefa</Button>
       </WrapperButton>
       <GroupAction>
         <ActionButton label="Concluídas" />
