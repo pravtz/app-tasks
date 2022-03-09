@@ -9,7 +9,7 @@ import { checkTask } from '../../redux/taskSlice'
 import { screen } from '../../redux/assideSlice'
 
 type taskprops = {
-  id: number
+  id: string
   titleTask: string
   isPending: boolean
 }

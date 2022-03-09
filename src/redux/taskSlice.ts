@@ -1,35 +1,12 @@
 import { createSlice } from '@reduxjs/toolkit'
 
-export const taskFake = [
-  {
-    id: '1',
-    titleTask: 'Academia',
-    isPending: false,
-    descriptionTask:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi lacus felis, tristique eget tincidunt suscipit, scelerisque eu leo. Curabitur enim ex, hendrerit ut leo id, varius consequat arcu.'
-  },
-  {
-    id: '2',
-    titleTask: 'Lavar o Carro',
-    isPending: true,
-    descriptionTask:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi lacus felis, tristique eget tincidunt suscipit, scelerisque eu leo. Curabitur enim ex, hendrerit ut leo id, varius consequat arcu.'
-  },
-  {
-    id: '3',
-    titleTask: 'Learning Radix-ui for assiccibility projects',
-    isPending: false,
-    descriptionTask:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi lacus felis, tristique eget tincidunt suscipit, scelerisque eu leo. Curabitur enim ex, hendrerit ut leo id, varius consequat arcu.'
-  },
-  {
-    id: '4',
-    titleTask: 'Jantar com a filha',
-    isPending: true,
-    descriptionTask:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi lacus felis, tristique eget tincidunt suscipit, scelerisque eu leo. Curabitur enim ex, hendrerit ut leo id, varius consequat arcu.'
-  }
-]
+export type taskTypesInitil = {
+  id: string
+  titleTask: string
+  isPending: boolean
+  descriptionTask: string
+}
+export const taskFake: taskTypesInitil[] = []
 
 export const taskSlice = createSlice({
   name: 'tasks',
