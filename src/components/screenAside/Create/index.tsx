@@ -1,18 +1,14 @@
-import { updateVisible } from '../../redux/assideSlice'
-import { addTask } from '../../redux/taskSlice'
-import { useAppDispatch } from '../../redux/rooks'
-import Icon from '../Icons/IconButton'
+import { updateVisible } from '../../../redux/assideSlice'
+import { addTask } from '../../../redux/taskSlice'
+import { useAppDispatch } from '../../../redux/rooks'
+import Icon from '../../Icons/IconButton'
 import { FiX } from 'react-icons/fi'
 import { Input, Wrapper, WrapperForm, Content, TextAria } from './styled'
-import Button from '../Button'
-import Header from '../Header'
+import Button from '../../Button'
+import Header from '../../Header'
 import { useState } from 'react'
 
-type formAddTaskProps = {
-  id?: string
-}
-
-const FormAddTask = ({ id }: formAddTaskProps) => {
+const Create = () => {
   const [nameTask, setNameTask] = useState('')
   const [descriptionTask, setDescriptionTask] = useState('')
 
@@ -58,4 +54,4 @@ const FormAddTask = ({ id }: formAddTaskProps) => {
     </Wrapper>
   )
 }
-export default FormAddTask
+export default Create
