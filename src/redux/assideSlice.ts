@@ -1,8 +1,17 @@
 import { createSlice } from '@reduxjs/toolkit'
 
-export const AsideInitial = {
+type asideprops = {
+  asideIsVisible: boolean
+  isEdition: boolean
+  idEdition: string
+  screenAside: 'delete' | 'create' | 'update' | 'information' | 'show' | null
+}
+
+export const AsideInitial: asideprops = {
   asideIsVisible: false,
-  isEdition: false
+  isEdition: false,
+  idEdition: '',
+  screenAside: null
 }
 
 export const assideSlice = createSlice({
@@ -14,10 +23,23 @@ export const assideSlice = createSlice({
     },
     updateScreenEdition: (state, action) => {
       state.valueAside.isEdition = action.payload
+    },
+    updateScreenAside: (state, action) => {
+      state.valueAside.screenAside = action.payload
+    },
+
+    screen: (state, action) => {
+      state.valueAside.asideIsVisible = action.payload.asideIsVisible
+      state.valueAside.idEdition = action.payload.idEdition
+      state.valueAside.screenAside = action.payload.screenAside
+    },
+    screenAndVisible: (state, action) => {
+      state.valueAside.asideIsVisible = action.payload.asideIsVisible
+      state.valueAside.screenAside = action.payload.screenAside
     }
   }
 })
 
-export const { updateVisible, updateScreenEdition } = assideSlice.actions
+export const { updateVisible, screen, screenAndVisible } = assideSlice.actions
 
 export default assideSlice.reducer
