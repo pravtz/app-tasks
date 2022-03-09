@@ -1,12 +1,12 @@
-import { useCallback, useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import ActionButton from '../ActionButton'
 import Icon from '../Icons/IconButton'
 import Toggle from '../Icons/IconToggle'
 import { ButtonsToActions, Check, Content, NameTask, Wrapper } from './styled'
 import { FiCheckSquare, FiSquare, FiEdit, FiTrash2 } from 'react-icons/fi'
 import { useAppDispatch } from '../../redux/rooks'
-import { deleteTask, checkTask } from '../../redux/taskSlice'
-import { updateVisible, updateScreenEdition } from '../../redux/assideSlice'
+import { checkTask } from '../../redux/taskSlice'
+import { screen } from '../../redux/assideSlice'
 
 type taskprops = {
   id: number
@@ -22,23 +22,39 @@ const Task = ({ id, titleTask, isPending }: taskprops) => {
     setPending(isPending)
   }, [id])
 
-  console.log(`atualizando..${id}`)
+  //console.log(`atualizando..${id}`)
 
   const handlerTooglePending = () => {
     setPending(!pending)
-    //dispatch(checkTask({ id: id }))
+    dispatch(checkTask({ id: id, isPending: pending }))
   }
   const handlerDelete = () => {
     console.log(`deletando..${id}`)
-    dispatch(deleteTask({ id: id }))
+    dispatch(
+      screen({
+        idEdition: id,
+        screenAside: 'delete',
+        asideIsVisible: true
+      })
+    )
   }
-  const handlerEditando = () => {
-    dispatch(updateVisible(true))
-    dispatch(updateScreenEdition(true))
+  const handlerUpdate = () => {
+    dispatch(
+      screen({
+        idEdition: id,
+        screenAside: 'update',
+        asideIsVisible: true
+      })
+    )
   }
-  const handlerOpenAside = () => {
-    dispatch(updateVisible(true))
-    dispatch(updateScreenEdition(false))
+  const handlerShow = () => {
+    dispatch(
+      screen({
+        idEdition: id,
+        screenAside: 'show',
+        asideIsVisible: true
+      })
+    )
   }
 
   return (
@@ -51,11 +67,11 @@ const Task = ({ id, titleTask, isPending }: taskprops) => {
             </Toggle>
           </Check>
           <NameTask>
-            <ActionButton onClick={handlerOpenAside} label={titleTask} />
+            <ActionButton onClick={handlerShow} label={titleTask} />
           </NameTask>
         </div>
         <ButtonsToActions>
-          <Icon onClick={handlerEditando} label="Editar">
+          <Icon onClick={handlerUpdate} label="Editar">
             <FiEdit size={22} />
           </Icon>
           <Icon onClick={handlerDelete} label="Excluir">
