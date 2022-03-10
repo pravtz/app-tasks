@@ -2,6 +2,7 @@ import styled from 'styled-components'
 import * as SeparatorPrimitive from '@radix-ui/react-separator'
 import media from 'styled-media-query'
 import Toggle from '../components/Icons/IconToggle'
+import IconButton from '../components/Icons/IconButton'
 
 export const GroupAction = styled.div`
   display: flex;
@@ -30,4 +31,9 @@ export const WrapperButton = styled.div`
 `
 export const ToggleFilter = styled(Toggle)`
   font-size: ${(props) => props.theme.fontSizes.fontSizes2};
+`
+export const LogoutButton = styled(IconButton)``
+export const WrapperLogoutButton = styled.div`
+  display: flex;
+  align-items: center;
 `

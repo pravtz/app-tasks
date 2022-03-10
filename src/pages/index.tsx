@@ -27,7 +27,7 @@ const Home: NextPage = () => {
       <Layout>
         <WrapperContent>
           <div>
-            <Header />
+            <Header title={'App Task'} />
             <WrapperButton>
               <Button onClick={() => router.push('/main')}>Entrar</Button>
             </WrapperButton>

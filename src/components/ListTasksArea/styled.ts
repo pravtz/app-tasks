@@ -3,6 +3,10 @@ import * as ScrollAreaPrimitive from '@radix-ui/react-scroll-area'
 import * as SeparatorPrimitive from '@radix-ui/react-separator'
 import Toggle from '../Icons/IconToggle'
 
+type groupActionProps = {
+  isVisible: boolean
+}
+
 export const WrapperScrollArea = styled(ScrollAreaPrimitive.Root)`
   width: 100%;
   height: 55%;
@@ -45,8 +49,11 @@ export const SeparadorAccessibility = styled(SeparatorPrimitive.Root)`
 `
 export const ToggleFilter = styled(Toggle)`
   font-size: ${(props) => props.theme.fontSizes.fontSizes2};
+  text-decoration: ${(props) => (props.pressed ? 'none' : 'line-through')};
+  opacity: ${(props) => (props.pressed ? 0.9 : 0.4)};
 `
-export const GroupAction = styled.div`
+export const GroupAction = styled.div<groupActionProps>`
+  visibility: ${(props) => (props.isVisible ? 'visible' : 'hidden')};
   display: flex;
   padding: 5px 0;
   align-items: center;
