@@ -23,10 +23,10 @@ const Show = ({ id }: showProps) => {
 
   return (
     <Wrapper>
-      <Icon onClick={handlerCloseAside} label="fechar">
+      <Icon className="icon-close" onClick={handlerCloseAside} label="fechar">
         <FiX size={32} />
       </Icon>
-      <Header title={false} subtitle="Tarefa: " />
+
       <Content>
         <h2>{titleTask}</h2>
         <p>{descriptionTask}</p>
