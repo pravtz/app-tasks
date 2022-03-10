@@ -49,11 +49,7 @@ const AsideBar = () => {
       )
 
     default:
-      return (
-        <Wrapper>
-          <Info />
-        </Wrapper>
-      )
+      return <Wrapper></Wrapper>
   }
 }
 

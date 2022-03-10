@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useCallback, useEffect, useState } from 'react'
 import {
   Wrapper,
   Content,
@@ -26,16 +26,21 @@ export const countCompletedTasks = (): number => {
 }
 
 const InfoNumberTasks = () => {
-  const [pendingTasks, setPendingTasks] = useState(0)
-  const [completedTasks, setCompletedTasks] = useState(1)
+  const [pendingTasks] = useState(countPendingTasks())
+  const [completedTasks] = useState(countCompletedTasks())
 
   const pluralizaçãoPendingTasks = pendingTasks > 1 ? 's' : ''
   const pluralizaçãocompletedTasks = completedTasks > 1 ? 's' : ''
+  const sumTasks = pendingTasks + completedTasks
 
   return (
     <Wrapper>
       <MensageWrapper>
-        <h3>{!!pendingTasks || !!completedTasks ? 'Você tem:' : ''}</h3>
+        <h3>
+          {!!pendingTasks || !!completedTasks
+            ? `Você tem o total de ${sumTasks} tarefa${sumTasks > 1 ? 's' : ''}`
+            : ''}
+        </h3>
       </MensageWrapper>
       <Content isVisible={!!pendingTasks || !!completedTasks}>
         <p>

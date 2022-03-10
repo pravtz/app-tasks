@@ -37,3 +37,4 @@ export const WrapperLogoutButton = styled.div`
   display: flex;
   align-items: center;
 `
+export const InformationButton = styled(IconButton)``
