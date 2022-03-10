@@ -15,7 +15,7 @@ type taskprops = {
 }
 
 const Task = ({ id, titleTask, isPending }: taskprops) => {
-  const [pending, setPending] = useState(false)
+  const [pending, setPending] = useState(true)
   const dispatch = useAppDispatch()
 
   useEffect(() => {
@@ -26,7 +26,7 @@ const Task = ({ id, titleTask, isPending }: taskprops) => {
 
   const handlerTooglePending = () => {
     setPending(!pending)
-    dispatch(checkTask({ id: id, isPending: pending }))
+    dispatch(checkTask({ id: id, isPending: !pending }))
   }
   const handlerDelete = () => {
     console.log(`deletando..${id}`)
