@@ -37,6 +37,7 @@ const Create = () => {
         <Header title={false} subtitle="Adicione sua tarefa" />
         <WrapperForm>
           <Input
+            required
             placeholder="Digite sua tarefa!"
             onChange={(event) => {
               setNameTask(event.target.value)
@@ -46,7 +47,7 @@ const Create = () => {
             onChange={(event) => {
               setDescriptionTask(event.target.value)
             }}
-            placeholder="Digite a descrição da tarefa"
+            placeholder="Digite a descrição da tarefa (opcional)"
           />
           <Button onClick={handlerAddTask}>Salvar Tarefa</Button>
         </WrapperForm>

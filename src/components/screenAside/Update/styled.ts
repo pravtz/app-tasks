@@ -11,7 +11,7 @@ export const WrapperForm = styled.div`
 `
 export const Input = styled.input`
   padding: 2px;
-  width: 30em;
+  width: 17em;
   height: 44px;
   border: none;
   outline: none;
@@ -42,9 +42,16 @@ export const Content = styled.div`
 export const TextAria = styled.textarea`
   padding: 5px;
   border: none;
-  width: 30em;
-  height: 20em;
+  width: 18em;
+  height: 20vh;
   border-radius: 9px;
   outline: none;
   margin-bottom: 12px;
+
+  ${media.greaterThan('medium')`
+    /* screen width is greater than 768px (medium) */
+    width: 30em;
+    height: 20em;
+
+  `}
 `

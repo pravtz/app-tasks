@@ -5,12 +5,15 @@ import {
   BackgroundImage,
   ContentWrapper,
   AsideRight,
-  AsideWrapper
+  AsideWrapper,
+  Credits
 } from './styled'
 import checkDouble from '../../../public/static/check-double-solid.svg'
 import AsideBar from '../AsideBar'
 import { useEffect, useState } from 'react'
 import { useAppSelector } from '../../redux/rooks'
+import Link from 'next/link'
+import { ImLinkedin } from 'react-icons/im'
 
 type LayoutProps = {
   children: React.ReactNode
@@ -42,6 +45,13 @@ const Layout = ({ children }: LayoutProps) => {
       <Content>
         <ContentWrapper>{children}</ContentWrapper>
       </Content>
+      <Credits>
+        <Link href="https://www.linkedin.com/in/pravtz" passHref>
+          <div>
+            <span>Developed by </span> <ImLinkedin size={12} /> Pravtz
+          </div>
+        </Link>
+      </Credits>
     </Wrapper>
   )
 }

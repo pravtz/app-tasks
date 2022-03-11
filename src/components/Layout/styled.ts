@@ -53,9 +53,9 @@ export const ContentWrapper = styled.div`
 `
 export const AsideRight = styled.div<AsideRightProps>`
   opacity: 0.98;
-  width: 80vw;
+  width: 100vw;
   height: 100vh;
-  right: ${(props) => (props.isVisible ? '0' : '-90%')};
+  right: ${(props) => (props.isVisible ? '0' : '-100vw')};
   background: linear-gradient(
     90deg,
     ${(props) => props.theme.colors.colorBackgroundUp} 0%,
@@ -69,3 +69,18 @@ export const AsideRight = styled.div<AsideRightProps>`
   box-shadow: -9px 0px 12px -1px rgba(0, 0, 0, 0.44);
 `
 export const AsideWrapper = styled.div``
+
+export const Credits = styled.div`
+  z-index: 100;
+  cursor: pointer;
+  position: absolute;
+  bottom: 2px;
+  width: 100%;
+  text-align: center;
+  color: ${(props) => props.theme.colors.colorBackgroundUp};
+  div {
+    &:hover {
+      color: ${(props) => props.theme.colors.icon};
+    }
+  }
+`

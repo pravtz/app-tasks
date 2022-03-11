@@ -7,6 +7,7 @@ import { Input, Wrapper, WrapperForm, Content, TextAria } from './styled'
 import Button from '../../Button'
 import Header from '../../Header'
 import { useCallback, useRef } from 'react'
+import { useEffect } from 'react'
 
 type createProps = {
   id?: string
@@ -25,6 +26,8 @@ const Create = ({ id }: createProps) => {
   const dispatch = useAppDispatch()
 
   const handlerCloseAside = () => dispatch(updateVisible(false))
+
+  const preventScroll = () => preventScroll
 
   const handlerUpdateTask = useCallback(() => {
     dispatch(
@@ -46,7 +49,12 @@ const Create = ({ id }: createProps) => {
       <Content>
         <Header title={false} subtitle="Atualize sua tarefa" />
         <WrapperForm>
-          <Input ref={inputTitle} defaultValue={titleTask} autoFocus />
+          <Input
+            ref={inputTitle}
+            defaultValue={titleTask}
+            required
+            onFocus={preventScroll}
+          />
           <TextAria ref={inputDescription} defaultValue={descriptionTask} />
           <Button onClick={handlerUpdateTask}>Atualizar Tarefa</Button>
         </WrapperForm>

@@ -23,4 +23,6 @@ export const Check = styled.div`
 export const NameTask = styled.div`
   text-align: left;
 `
-export const ButtonsToActions = styled.div``
+export const ButtonsToActions = styled.div`
+  text-align: left;
+`
