@@ -5,7 +5,8 @@ import {
   WrapperButton,
   LogoutButton,
   WrapperLogoutButton,
-  InformationButton
+  InformationButton,
+  WrapperTool
 } from '../styles/mainPage'
 import Button from '../components/Button'
 import ListTasksArea from '../components/ListTasksArea'
@@ -36,17 +37,19 @@ const Home: NextPage = () => {
 
   return (
     <Layout>
-      <InformationButton
-        onClick={handlerOpenAsideInformation}
-        label="Informações"
-      >
-        <FiInfo />
-      </InformationButton>
-      <LogoutButton onClick={() => router.push('/')} label="Sair">
-        <WrapperLogoutButton>
-          <FiLogOut /> <span>Sair</span>
-        </WrapperLogoutButton>
-      </LogoutButton>
+      <WrapperTool>
+        <InformationButton
+          onClick={handlerOpenAsideInformation}
+          label="Informações"
+        >
+          <FiInfo size={20} />
+        </InformationButton>
+        <LogoutButton onClick={() => router.push('/')} label="Sair">
+          <WrapperLogoutButton>
+            <FiLogOut size={20} /> <span>Sair</span>
+          </WrapperLogoutButton>
+        </LogoutButton>
+      </WrapperTool>
       <Header subtitle={'Crie suas tarefas de forma simples e fácil!'} />
       <WrapperButton>
         <Button onClick={handlerOpenAsideToAddTask}>Add tarefa</Button>

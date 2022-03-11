@@ -36,5 +36,17 @@ export const LogoutButton = styled(IconButton)``
 export const WrapperLogoutButton = styled.div`
   display: flex;
   align-items: center;
+  color: ${(props) => props.theme.colors.textPrimary};
+  &:hover {
+    color: ${(props) => props.theme.colors.textHighlight};
+  }
 `
-export const InformationButton = styled(IconButton)``
+export const InformationButton = styled(IconButton)`
+  margin-right: 18px;
+  color: ${(props) => props.theme.colors.textPrimary};
+`
+
+export const WrapperTool = styled.div`
+  width: 100%;
+  text-align: right;
+`
