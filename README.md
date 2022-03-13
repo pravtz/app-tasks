@@ -4,8 +4,6 @@ Este é um aplicativo web, simples, para organizar as tarefas. Primeiramente a a
 
 As tecnologias utilizadas foram Nextjs, Redux (toolkit, redux-persist), styled component, radixUi
 
-![How to use](/Doc/app-task-how-to-use.mov)
-
 # Como usar
 
 Para rodar o projeto em mode de desenvolvimento, é necessario que em seu computador esteja instalado o nodejs na version > 14 e o npm na version > 6.1
@@ -70,5 +68,3 @@ Para rodar o projeto em mode de desenvolvimento, é necessario que em seu comput
       Obs[3]: Aplicar comentários explicando cada função utilizada
 
       Obs[4]: Design/Layout livre
-
-![](/Doc/app-task-how-to-use.gif)
